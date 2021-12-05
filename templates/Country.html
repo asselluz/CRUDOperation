@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head> 
+    <title> Countries </title>
+</head>
+<body>
+    <center>
+        <h1> Countries </h1>
+        <hr/>
+        <a href="{% url 'Insertcountry' %}">Create new country</a>
+        <table border="1">
+            <tr>
+                <th>Country name</th>
+                <th>Population</th>
+            </tr>
+            {% for result in data %}
+            <tr>
+                <td>{{result.cname}} </td>
+                <td>{{result.population}} </td>
+                <td><a href="Editcountry/{{result.cname}}"/>Edit</a></td>
+                <td><a href="Deletecountry/{{result.cname}}" onclick="return confirmation('Are you sure you want to delete?')">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'tables' %}">Go to tables page</a>
+    </center>
+</body>

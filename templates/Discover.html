@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head> 
+    <title> Discover </title>
+</head>
+<body>
+    <center>
+        <h1> Discover </h1>
+        <hr/>
+        <a href="{% url 'Insertdiscover' %}">Create new discovery</a>
+        <table border="1">
+            <tr>
+                <th>Country name</th>
+                <th>Disease code</th>
+                <th>First encountered date</th>
+            </tr>
+            {% for result in data %}
+            <tr>
+                <td>{{result.cname}} </td>
+                <td>{{result.disease_code}} </td>
+                <td>{{result.first_enc_date}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'tables' %}">Go to tables page</a>
+    </center>
+</body>

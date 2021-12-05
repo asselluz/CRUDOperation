@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head> 
+    <title> Insert country </title>
+</head>
+<body>
+    <center>
+        <h1> Insert Record CountryL</h1>
+        <hr/>
+        <form method="POST">
+            {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>Country name </td>
+                <td><input type="text" placeholder="Enter country name" name="cname"></td>
+            </tr>   
+            <tr>
+                <td>Country's population</td>
+                <td><input type="text" placeholder="Enter country's population .." name="population"></td>
+            </tr>    
+            <tr>
+                <td><input type="submit" value="Insertcountry"/>
+                <td> {% if messages %} 
+                    {% for mess in messages %}
+                    <b style="color: green;">{{mess}}</b>
+                    {% endfor %}
+                    {% endif %}</td>
+            </tr>  
+        </table>
+        <a href="{% url 'showcountry' %}">Go to previous page</a>
+    </form>
+    </center>
+</body>

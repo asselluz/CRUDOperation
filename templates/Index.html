@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head> 
+    <title> Users </title>
+</head>
+<body>
+    <center>
+        <h1> All users </h1>
+        <hr/>
+        <a href="{% url 'Insertemp' %}">Create new user</a>
+        <table border="1">
+            <tr>
+                <th>User's email</th>
+                <th>User's name</th>
+                <th>User's surname</th>
+                <th>User's salary</th>
+                <th>User's phone</th>
+                <th>User's country</th>
+            </tr>
+            {% for result in data %}
+            <tr>
+                <td>{{result.email}} </td>
+                <td>{{result.name}} </td>
+                <td>{{result.surname}} </td>
+                <td>{{result.salary}} </td>
+                <td>{{result.phone}} </td>
+                <td>{{result.cname}} </td>
+                <td><a href="Edit/{{result.email}}"/>Edit</a></td>
+                <td><a href="Delete/{{result.email}}" onclick="return confirmation('Are you sure you want to delete?')">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'tables' %}">Go to tables page</a>
+    </center>
+</body>

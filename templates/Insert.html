@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<head> 
+    <title> CRUD Operation With PostgreSQL </title>
+</head>
+<body>
+    <center>
+        <h1> Insert Record Into PostgreSQL</h1>
+        <h3> Django Web Tutorials </h3>
+        <hr/>
+        <form method="POST">
+            {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td>User's email </td>
+                <td><input type="text" placeholder="Enter user's email .." name="email"></td>
+            </tr>   
+            <tr>
+                <td>User's name </td>
+                <td><input type="text" placeholder="Enter user's name .." name="name"></td>
+            </tr>  
+            <tr>
+                <td>User's surname </td>
+                <td><input type="text" placeholder="Enter employee's surname .." name="surname"></td>
+            </tr>  
+            <tr>
+                <td>User's salary </td>
+                <td><input type="text" placeholder="Enter employee's salary .." name="salary"></td>
+            </tr>  
+            <tr>
+                <td>User's phone number </td>
+                <td><input type="text" placeholder="Enter employee's phone .." name="phone"></td>
+            </tr>  
+            <tr>
+                <td>User's country </td>
+                <td><input type="text" placeholder="Enter employee's country .." name="cname"></td>
+            </tr>  
+            <tr>
+                <td><input type="submit" value="Insert"/>
+                <td> {% if messages %} 
+                    {% for mess in messages %}
+                    <b style="color: green;">{{mess}}</b>
+                    {% endfor %}
+                    {% endif %}</td>
+            </tr>  
+        </table>
+        <a href="{% url 'showemp' %}">Go to previous page</a>
+    </form>
+    </center>
+</body>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head> 
+    <title> Query 1 </title>
+</head>
+<body>
+    <center>
+        <h1> Query 1 </h1>
+        <h3>List the disease code and the description of diseases that are caused by “bacteria” (pathogen) and were discovered before 1990.
+        </h3>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Result</th>
+            </tr>
+            {% for result in row %}
+            <tr>
+                <td>{{result}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'queries' %}">Go to queries page</a>
+    </center>
+</body>

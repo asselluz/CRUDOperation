@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head> 
+    <title> Specialize </title>
+</head>
+<body>
+    <center>
+        <h1> Specializations table </h1>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>ID of disease type</th>
+                <th>Email</th>
+            </tr>
+            {% for result in data %}
+            <tr>
+                <td>{{result.id_id}} </td>
+                <td>{{result.email_id}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'tables' %}">Go to tables page</a>
+    </center>
+</body>

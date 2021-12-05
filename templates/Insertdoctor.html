@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head> 
+    <title> Insert doctor </title>
+</head>
+<body>
+    <center>
+        <h1> Insert doctor </h1>
+        <hr/>
+        <form method="POST">
+            {% csrf_token %}
+        <table border="1">
+            <tr>
+                <td> Email </td>
+                <td><input type="text" placeholder="Enter email: " name="email"></td>
+            </tr>   
+            <tr>
+                <td>Degree</td>
+                <td><input type="text" placeholder="Enter degree" name="degree"></td>
+            </tr>  
+            <tr>
+                <td><input type="submit" value="Insert doctor"/>
+                <td> {% if messages %} 
+                    {% for mess in messages %}
+                    <b style="color: green;">{{mess}}</b>
+                    {% endfor %}
+                    {% endif %}</td>
+            </tr>  
+        </table>
+        <a href="{% url 'showdoctor' %}">Go to previous page</a>
+    </form>
+    </center>
+</body>

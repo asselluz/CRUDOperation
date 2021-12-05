@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head> 
+    <title> Query 2 </title>
+</head>
+<body>
+    <center>
+        <h1> Query 2 </h1>
+        <h3>List the name, surname and degree of doctors who are not specialized in “infectious diseases”.
+        </h3>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Result</th>
+            </tr>
+            {% for result in row %}
+            <tr>
+                <td>{{result}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'queries' %}">Go to queries page</a>
+    </center>
+</body>

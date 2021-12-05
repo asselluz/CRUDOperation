@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<head> 
+    <title> Query4 </title>
+</head>
+<body>
+    <center>
+        <h1> Query 4 </h1>
+        <h3>For each country list the cname and average salary of doctors who are specialized in “virology”.</h3>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Result</th>
+            </tr>
+            {% for result in row %}
+            <tr>
+                <td>{{result}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'queries' %}">Go to queries page</a>
+    </center>
+</body>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head> 
+    <title> Query6 </title>
+</head>
+<body>
+    <center>
+        <h1> Query 6 </h1>
+        <h3>List the email, name, and department of public servants who have created records where the number of patients is between 100000 and 999999.
+        </h3>
+        <hr/>
+        <table border="1">
+            <tr>
+                <th>Result</th>
+            </tr>
+            {% for result in row %}
+            <tr>
+                <td>{{result}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'queries' %}">Go to queries page</a>
+    </center>
+</body>

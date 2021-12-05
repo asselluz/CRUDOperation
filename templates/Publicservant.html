@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<head> 
+    <title> Doctors </title>
+</head>
+<body>
+    <center>
+        <h1> All public servants </h1>
+        <hr/>
+        <a href="{% url 'Insertpublicservant' %}">Create new servant</a>
+        <table border="1">
+            <tr>
+                <th>Email</th>
+                <th>Department</th>
+            </tr>
+            {% for result in data %}
+            <tr>
+                <td>{{result.email}} </td>
+                <td>{{result.department}} </td>
+                <td><a href="Editpublicservant/{{result.email}}"/>Edit</a></td>
+                <td><a href="Deletepublicservant/{{result.email}}" onclick="return confirmation('Are you sure you want to delete?')">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'tables' %}">Go to tables page</a>
+    </center>
+</body>

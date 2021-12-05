@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<head> 
+    <title> Record </title>
+</head>
+<body>
+    <center>
+        <h1> Records table </h1>
+        <hr/>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'tables' %}">Go to tables page</a>
+        <table border="1">
+            <tr>
+                <th>Email</th>
+                <th>Country name</th>
+                <th>Disease code</th>
+            </tr>
+            {% for result in data %}
+            <tr>
+                <td>{{result.email}} </td>
+                <td>{{result.cname}} </td>
+                <td>{{result.disease_code}} </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{% url 'main' %}">Go to main page</a>
+        <a href="{% url 'tables' %}">Go to tables page</a>
+    </center>
+</body>
